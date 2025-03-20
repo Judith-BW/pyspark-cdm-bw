@@ -123,12 +123,14 @@ class Entity:
         """
         for file_pattern in self.file_patterns:
             for file_path in glob(file_pattern):
+                print(f"File path:{file_path}")
                 yield remove_root_from_path(file_path, "/dbfs")
 
         for partition in self.declaration.data_partitions:
             location = partition.location
             location = location.replace("adls:", "local:")
             path = self.corpus.storage.corpus_path_to_adapter_path(location)
+            print(f"Path:{path}")
             yield remove_root_from_path(path, "/dbfs")
 
     @property
