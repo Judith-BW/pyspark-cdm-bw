@@ -191,6 +191,7 @@ class Entity:
                 schema=alter_schema(schema_with_replaced_timestamp_types),
                 **load_kwargs,
             )
+            print(f"Filename:{self.file_paths}")
 
             datetime_parser = DatetimeParser(df, self.catalog)
             parsed_df = datetime_parser.convert_datetime_columns()
@@ -198,6 +199,8 @@ class Entity:
             return parsed_df
 
         else:
+
+            print(f"Filename:{self.file_paths}")
 
             return spark.read.csv(
                 list(self.file_paths),
