@@ -26,7 +26,7 @@ from pyspark.sql import DataFrame
 from pyspark_cdm.datetime_parser import DatetimeParser
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 
-raise Exception ("This is a placeholder file")
+#raise Exception ("This is a placeholder file")
 
 def log_attempt_number(retry_state):
     """Print a message after retrying."""
