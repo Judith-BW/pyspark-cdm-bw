@@ -124,7 +124,6 @@ class Entity:
         """
         for file_pattern in self.file_patterns:
             for file_path in glob(file_pattern):
-                print(f"File path:{file_path}")
                 yield remove_root_from_path(file_path, "/dbfs")
 
         for partition in self.declaration.data_partitions:
@@ -201,7 +200,7 @@ class Entity:
             return parsed_df
 
         else:
-            
+
             return spark.read.csv(
                 list(self.file_paths),
                 schema=alter_schema(self.catalog.schema),
