@@ -62,15 +62,24 @@ class Entity:
         Returns:
             str: The path to the entity file.
         """
-        print(f"From property path: {self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}")
-        return f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
+        # jj 
+        a = f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
+        print(f"From property path: {a}")
+        return a
+        # return f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
 
     @cached_property
     def document(self) -> CdmEntityDefinition:
-        return get_document_from_path(
+        a = get_document_from_path(
             corpus=self.corpus,
             path=self.path,
         )
+        print(f"From cached_property document: {a}")
+        return a
+        # return get_document_from_path(
+        #     corpus=self.corpus,
+        #     path=self.path,
+        # )
 
     @property
     def is_model(self) -> bool:
@@ -80,9 +89,14 @@ class Entity:
         Returns:
             bool: Whether the entity is a model or a manifest.
         """
-        return self.manifest.document.at_corpus_path.endswith(
+        a = self.manifest.document.at_corpus_path.endswith(
             PersistenceLayer.MODEL_JSON_EXTENSION
         )
+        print(f"From property is_model: {a}")
+        return a
+        # return self.manifest.document.at_corpus_path.endswith(
+        #     PersistenceLayer.MODEL_JSON_EXTENSION
+        # )
 
     @cached_property
     def data(self) -> LocalEntity:
