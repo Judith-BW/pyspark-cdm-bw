@@ -17,6 +17,7 @@ class Manifest:
 
     @cached_property
     def document(self) -> CdmManifestDefinition:
+        print(f"Getting document from path: {self.path}")	
         return get_document_from_path(
             corpus=self.corpus,
             path=self.path,

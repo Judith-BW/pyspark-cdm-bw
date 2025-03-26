@@ -62,6 +62,7 @@ class Entity:
         Returns:
             str: The path to the entity file.
         """
+        print(f"From property path: {self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}")
         return f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
 
     @cached_property
