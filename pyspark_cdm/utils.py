@@ -57,8 +57,6 @@ def get_document_from_path(
     task = loop.create_task(corpus.fetch_object_async(path))
     manifest = loop.run_until_complete(task)
 
-    print(f"path from get_document_from_path 2: {path}")
-
     if manifest is None:
         raise DocumentLoadingException(f"Unable to load document from path: {path}")
 

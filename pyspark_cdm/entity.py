@@ -62,24 +62,14 @@ class Entity:
         Returns:
             str: The path to the entity file.
         """
-        # jj 
-        a = f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
-        print(f"From property path: {a}")
-        return a
-        # return f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
+        return f"{self.manifest.document.folder.at_corpus_path}/{self.declaration.entity_path}"
 
     @cached_property
     def document(self) -> CdmEntityDefinition:
-        a = get_document_from_path(
+        return get_document_from_path(
             corpus=self.corpus,
             path=self.path,
         )
-        print(f"From cached_property document: {a}")
-        return a
-        # return get_document_from_path(
-        #     corpus=self.corpus,
-        #     path=self.path,
-        # )
 
     @property
     def is_model(self) -> bool:
