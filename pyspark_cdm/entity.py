@@ -89,14 +89,9 @@ class Entity:
         Returns:
             bool: Whether the entity is a model or a manifest.
         """
-        a = self.manifest.document.at_corpus_path.endswith(
+        return self.manifest.document.at_corpus_path.endswith(
             PersistenceLayer.MODEL_JSON_EXTENSION
         )
-        print(f"From property is_model: {a}")
-        return a
-        # return self.manifest.document.at_corpus_path.endswith(
-        #     PersistenceLayer.MODEL_JSON_EXTENSION
-        # )
 
     @cached_property
     def data(self) -> LocalEntity:
