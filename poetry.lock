@@ -283,7 +283,7 @@ regex = ">=2020.11.13"
 
 [package.source]
 type = "git"
-url = "https://github.com/quantile-development/CDM.git"
+url = "https://github.com/Judith-BW/CDM-BW-Old.git"
 reference = "master"
 resolved_reference = "ede1dd1a15a6ee437707c13e498991435f497e9f"
 subdirectory = "objectModel/Python"
