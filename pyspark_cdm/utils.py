@@ -53,6 +53,7 @@ def get_document_from_path(
     Returns:
         Optional[CdmObject]: Content of the document, can be any CDM object.
     """
+    print("yeah")
     loop = get_or_create_eventloop()
     task = loop.create_task(corpus.fetch_object_async(path))
     manifest = loop.run_until_complete(task)
