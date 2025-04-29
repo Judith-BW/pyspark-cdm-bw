@@ -18,7 +18,6 @@ class Manifest:
     @cached_property
     def document(self) -> CdmManifestDefinition:
         print("boe")
-        print(f"self.corpus: {self.corpus}")
         print(f"self.path: {self.path}")
         return get_document_from_path(
             corpus=self.corpus,
